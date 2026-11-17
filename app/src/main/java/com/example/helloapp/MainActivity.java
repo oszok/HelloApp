@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView textGreeting;
     private Button buttonClick;
+    private Button buttonReset;
     private int clickCount = 0;
 
     @Override
@@ -30,11 +31,18 @@ public class MainActivity extends AppCompatActivity {
 
         textGreeting = findViewById(R.id.text_greeting);
         buttonClick = findViewById(R.id.button_click);
+        buttonReset = findViewById(R.id.button_reset); // <-- Tutaj brakowało tej linijki!
 
         buttonClick.setOnClickListener(v -> {
             clickCount++;
             textGreeting.setText("Kliknięto " + clickCount + " razy");
             Toast.makeText(this, R.string.clicked, Toast.LENGTH_SHORT).show();
+        });
+
+        buttonReset.setOnClickListener(v -> {
+            clickCount = 0; // Poprawiono logikę na faktyczne zerowanie
+            textGreeting.setText("Zresetowano");
+            Toast.makeText(this, "Zresetowano", Toast.LENGTH_SHORT).show();
         });
     }
 }

@@ -3,4 +3,5 @@
     <string name="greeting">Cześć, 4TP!</string>
     <string name="button_click">Kliknij mnie</string>
     <string name="clicked">Kliknięto!</string>
+    <string name="button_reset">Resetuj</string>
 </resources>
