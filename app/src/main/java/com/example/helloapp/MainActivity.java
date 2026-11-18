@@ -1,6 +1,7 @@
 package com.example.helloapp;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -12,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "MójSklepTag";
     private Button buttonStart;
 
     @Override
@@ -19,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+        Log.d(TAG, "Metoda onCreate została uruchomiona!");
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -29,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         buttonStart = findViewById(R.id.button_start);
 
         buttonStart.setOnClickListener(v -> {
+            Log.d(TAG, "Kliknięto przycisk Start!");
             Toast.makeText(this, R.string.toast_soon, Toast.LENGTH_SHORT).show();
         });
     }
