@@ -2,7 +2,6 @@ package com.example.helloapp;
 
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -13,36 +12,24 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView textGreeting;
-    private Button buttonClick;
-    private Button buttonReset;
-    private int clickCount = 0;
+    private Button buttonStart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        textGreeting = findViewById(R.id.text_greeting);
-        buttonClick = findViewById(R.id.button_click);
-        buttonReset = findViewById(R.id.button_reset); // <-- Tutaj brakowało tej linijki!
+        buttonStart = findViewById(R.id.button_start);
 
-        buttonClick.setOnClickListener(v -> {
-            clickCount++;
-            textGreeting.setText("Kliknięto " + clickCount + " razy");
-            Toast.makeText(this, R.string.clicked, Toast.LENGTH_SHORT).show();
-        });
-
-        buttonReset.setOnClickListener(v -> {
-            clickCount = 0; // Poprawiono logikę na faktyczne zerowanie
-            textGreeting.setText("Zresetowano");
-            Toast.makeText(this, "Zresetowano", Toast.LENGTH_SHORT).show();
+        buttonStart.setOnClickListener(v -> {
+            Toast.makeText(this, R.string.toast_soon, Toast.LENGTH_SHORT).show();
         });
     }
 }

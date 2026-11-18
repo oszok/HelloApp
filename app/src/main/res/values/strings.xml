@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">HelloApp</string>
-    <string name="greeting">Cześć, 4TP!</string>
-    <string name="button_click">Kliknij mnie</string>
-    <string name="clicked">Kliknięto!</string>
-    <string name="button_reset">Resetuj</string>
+    <string name="app_name">Mój Sklep</string>
+    <string name="shop_title">Elektroniczny Sklep Online</string>
+    <string name="shop_description">Znajdź najlepsze produkty elektroniczne w świetnych cenach z dostawą do domu.</string>
+    <string name="button_start">Start</string>
+    <string name="toast_soon">Wkrótce</string>
 </resources>
